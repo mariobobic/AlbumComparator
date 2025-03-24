@@ -59,18 +59,18 @@ python -m venv .venv source .venv/bin/activate # On Linux/macOS
 File: config/ssh_config.json
 ```
 {
-"host": "your.server.com",
-"username": "your_user",
-"password": "your_password",
-"port": 22,
-"remote_root": "~/Photos/PhoneAlbums"
+    "host": "your.server.com",
+    "username": "your_user",
+    "password": "your_password",
+    "port": 22,
+    "remote_root": "~/Photos/PhoneAlbums"
 }
 ```
 
 File: config/local_config.json
 ```
 {
-"root_directory": "/Users/yourname/Pictures/PhoneAlbums"
+    "root_directory": "/Users/yourname/Pictures/PhoneAlbums"
 }
 ```
 

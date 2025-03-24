@@ -1,0 +1,43 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Exported output
+/exported/
+
+# Credential and config files
+creds/
+config/*.json
+
+# Log files
+*.log
+
+# Test & debug leftovers
+*.bak
+*.tmp
+*.swp
+
+# Token/cache/pickle files
+*.pickle
+
+# Dependency resolution tools
+pip-log.txt
+pip-delete-this-directory.txt

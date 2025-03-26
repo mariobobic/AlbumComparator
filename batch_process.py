@@ -29,7 +29,7 @@ def process_batch(albums: list, source1: str, source2: str):
 
         compare_filenames(file1, file2, source1, source2)
 
-def discover_remote_albums(excluded=None):
+def discover_remote_albums() -> list[str]:
     ssh_exporter = SshFilenameExporter()
     print("🔐 Connecting to SSH host to fetch album list...")
     client = ssh_exporter._connect()
@@ -37,20 +37,11 @@ def discover_remote_albums(excluded=None):
     folders = sorted(stdout.read().decode().splitlines())
     client.close()
 
-    excluded = excluded or []
-    applied_exclusions = [f for f in excluded if f in folders]
+    return folders
 
-    if applied_exclusions:
-        print(f"🚫 Excluding folders: {applied_exclusions}")
-        folders = [f for f in folders if f not in applied_exclusions]
-
-    print("📦 Found remote folders:")
-    for f in folders:
-        print(f"  - {f}")
-
-    confirm = input("❓ Use these folders? [y/N]: ")
-    if confirm.lower() != 'y':
-        print("❌ Aborted.")
-        return []
+def discover_local_albums() -> list[str]:
+    local_exporter = LocalFilenameExporter()
+    folders = sorted([f for f in os.listdir(local_exporter.root_directory)
+                      if os.path.isdir(os.path.join(local_exporter.root_directory, f))])
 
     return folders

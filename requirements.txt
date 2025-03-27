@@ -5,3 +5,6 @@ requests>=2.31.0
 
 # SSH support
 paramiko>=3.3.1
+
+# Path validation
+pathvalidate>=3.2.3

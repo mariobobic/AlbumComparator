@@ -21,6 +21,7 @@ venv/
 Thumbs.db
 
 # Exported output
+/albums/
 /exported/
 
 # Credential and config files
